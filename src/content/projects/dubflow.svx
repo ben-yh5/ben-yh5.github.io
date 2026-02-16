@@ -1,0 +1,16 @@
+---
+name: Dubflow
+order: 5
+coord: "[47.6554, -122.3051]"
+type: Hackathon
+summary: "#"
+url: 
+github: https://github.com/refact0r/dubflow
+tags:
+  - Electron
+  - SvelteKit
+  - AWS Rekognition
+  - Socket
+---
+
+description
