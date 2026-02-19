@@ -3,8 +3,8 @@ name: CityStreetGame
 order: 6
 type: Independent
 summary: "#"
-url: https://ben-6.github.io/citystreetgame/
-github: https://github.com/ben-6/citystreetgame
+url: https://ben-yh5.github.io/citystreetgame/
+github: https://github.com/ben-yh5/citystreetgame
 tags:
   - OpenStreetMap
   - Mapbox GL
