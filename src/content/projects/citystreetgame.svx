@@ -1,5 +1,5 @@
 ---
-name: CityStreetGame
+name: citystreetgame
 order: 6
 type: Independent
 summary: "#"
@@ -10,4 +10,31 @@ tags:
   - Mapbox GL
 ---
 
-description
+<script>
+	import Figure from '$lib/components/Figure.svelte';
+</script>
+
+<Figure src="/images/citystreetgame/streets-screenshot.jpg" alt="Screenshot of citystreetgame's streets mode" caption="The default Seattle map, with the streets game mode active" />
+
+citystreetgame is a web-based geography trivia game where players test their knowledge of a city's street layout through naming streets, identifying intersection locations, and
+navigating routes via turn-by-turn cue sheets. By leveraging OpenStreetMap's open data model, the project utilizes Overpass' API to enable gameplay on any mapped city worldwide. Built as a fully static, client-side app with Vite and JS, it manages graph-building, pathfinding (Dijkstra), and street intersection detection directly in the browser. Mapbox GL is used for the base blank map.
+
+This game was inspired by Chris Arvin's San Francisco street-naming game (https://carvin.github.io/sf-street-names). I took inspiration from the street-naming idea, minimalist theme, and UI layout. My enhancement of the idea centered around expanding it to any arbitrary city/region and adding more game modes.
+
+In this game, the default city is Seattle, which is cached due to frequent use. However, any city can be selected by simply typing in its name underneath "tools and settings."
+
+## Modes
+
+Streets
+- Type in street names to fill in streets.
+- Supports partial matching (type "pacific" for "Northeast Pacific Street/Place/etc").
+
+Intersection
+- Given two roads that intersect, place a pin at their intersection.
+- For roads with the same names that intersect at multiple locations, it identifies the closer intersection.
+
+Route
+- Given a start and an end intersection, identify a route that travels between them without highways.
+- Task is to write "cues" in order (turn left/right at X street) to reach the destination.
+
+<Figure src="/images/citystreetgame/intersections-screenshot.jpeg" alt="Screenshot of citystreetgame's intersections mode" caption="Manhattan intersections mode" />
