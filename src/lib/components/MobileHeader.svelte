@@ -1,5 +1,5 @@
 <nav class="mobile-header">
-	<div class="name">Ben Hu</div>
+	<a href="/" class="name">Ben Hu</a>
 	<div class="links">
 		<a href="/#experience">Experience</a>
 		<a href="/#projects">Projects</a>
@@ -16,6 +16,9 @@
 		font-family: Georgia, 'Times New Roman', Times, serif;
 		font-size: 18px;
 		font-weight: 400;
+		color: var(--text);
+		text-decoration: none;
+		display: inline-block;
 	}
 
 	.links {

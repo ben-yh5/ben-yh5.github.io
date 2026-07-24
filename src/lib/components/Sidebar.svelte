@@ -8,7 +8,7 @@
 
 <aside class="sidebar">
 	<div class="sidebar-top">
-		<div class="name">Ben Hu</div>
+		<a href="/" class="name">Ben Hu</a>
 		<div class="tagline">CV & map applications</div>
 		<nav>
 			<a href="/#experience" class:active={activeSection === 'experience'}>Experience</a>
@@ -41,6 +41,8 @@
 		font-weight: 400;
 		color: var(--text);
 		margin-bottom: 3px;
+		text-decoration: none;
+		display: block;
 	}
 
 	.tagline {
