@@ -12,11 +12,14 @@
 <style>
 	figure {
 		margin: 16px 0;
+		text-align: center;
 	}
 
 	img {
-		display: block;
+		display: inline-block;
 		max-width: 100%;
+		max-height: 560px;
+		width: auto;
 		border-radius: 6px;
 	}
 

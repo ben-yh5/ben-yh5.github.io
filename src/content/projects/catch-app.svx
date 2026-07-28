@@ -7,9 +7,39 @@ url: "#"
 github: https://github.com/ben-yh5/catch-app
 tags:
   - React Native
+  - Expo
   - Firebase
-  - Tensorflow
   - Mapbox GL
+  - TensorFlow
 ---
 
-description
+<script>
+	import Figure from '$lib/components/Figure.svelte';
+	import FigureRow from '$lib/components/FigureRow.svelte';
+</script>
+
+<FigureRow>
+	<Figure src="/images/catch-app/explore-screenshot.jpg" alt="Screenshot of Catch's Explore feed showing photo-worthy locations shared by other users" caption="The Explore feed, showing photo posted by other users" />
+	<Figure src="/images/catch-app/map-screenshot.jpg" alt="Screenshot of the map view with location pins" caption="Browsing nearby posts on the map" />
+</FigureRow>
+
+Catch is a location-based social app built around a simple idea: a user can post a photo of something cool, and other people can then "catch" that post by physically traveling there and recreating the shot. Posts land on a shared global map - great for travel inspiration and place discovery. Additionally, as more people catch the same photo, each thread can evolve to become a crowdsourced timeline of a place.
+
+The client is React Native and Expo, connected to a Firebase backend. Locations are indexed with geohashes so the Mapbox-powered map and nearby-post queries stay fast as users pan around the map. Post locations are verified using location data and a vision model to ensure the integrity of the game, and to motivate users to go outside. Authentication is handled via Firebase's Google single sign-on. 
+
+## Features
+
+Catching
+- To catch a post, a user has to be physically near the original coordinates and submit a new photo from roughly the same vantage point.
+- An on-device TensorFlow Lite model (a Siamese-style network trained on an image-matching pipeline) scores visual similarity between the original photo and the recreation, so a catch has to resemble the shot, not just be nearby.
+
+Semantic search
+- On every post creation, a Gemini vision-language model tags every single image for landmarks. These, along with the caption and location, are stored in a vector database as embeddings.
+- A cosine-similarity search and a keyword matching system provide relevant results on search, reranked based on distance to the user.
+
+Progression
+- Posting and catching both earn contribution points. "Pioneer" posts in new locations (few posts in radius) earn more points than one close to existing pins.
+- Both the catcher and the original post creator earn points for catches, which are computed server-side.
+- Each user's posts and catches are saved to their profile.
+
+<Figure src="/images/catch-app/2.jpg" alt="Screenshot of a post detail screen with the 'Catch This Shot' button" caption="Prompting a user to catch a nearby post" />

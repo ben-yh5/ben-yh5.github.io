@@ -4,6 +4,10 @@
 	let { data } = $props();
 </script>
 
+<svelte:head>
+	<title>Ben Hu</title>
+</svelte:head>
+
 <div class="page-header">
 	<h1>Hello, I'm Ben.</h1>
 	<p>Currently based in Seattle studying CS at the University of Washington. I'm interested in computer vision, working with spatial data, and map-based applications.</p>
