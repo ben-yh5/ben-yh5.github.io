@@ -9,3 +9,10 @@ export interface Project {
 	tags: string[];
 	coord?: string;
 }
+
+export interface Post {
+	title: string;
+	slug: string;
+	date: string;
+	summary?: string;
+}

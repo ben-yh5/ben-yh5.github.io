@@ -1,6 +1,7 @@
 ---
 name: Catch App
 order: 1
+coord: "[0.0000, 0.0000]"
 type: Independent
 summary: "#"
 url: "#"

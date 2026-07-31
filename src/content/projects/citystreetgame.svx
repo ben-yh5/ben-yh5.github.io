@@ -1,6 +1,7 @@
 ---
 name: citystreetgame
 order: 6
+coord: "[0.0000, 0.0000]"
 type: Independent
 summary: "#"
 url: https://ben-yh5.github.io/citystreetgame/

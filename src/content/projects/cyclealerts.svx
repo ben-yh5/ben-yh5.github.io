@@ -1,6 +1,7 @@
 ---
 name: CycleAlerts
 order: 4
+coord: "[0.0000, 0.0000]"
 type: Independent
 summary: "#"
 url: https://cyclealerts.vercel.app/

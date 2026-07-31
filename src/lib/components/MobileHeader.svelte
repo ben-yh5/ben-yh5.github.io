@@ -1,8 +1,10 @@
 <nav class="mobile-header">
 	<a href="/" class="name">Ben Hu</a>
 	<div class="links">
-		<a href="/#experience">Experience</a>
+		<a href="/#about">About</a>
 		<a href="/#projects">Projects</a>
+		<a href="/#writing">Writing</a>
+		<a href="/#map">Map</a>
 	</div>
 </nav>
 
