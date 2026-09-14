@@ -19,7 +19,9 @@
 	<h2>Option 2: By email</h2>
 	<p>
 		If you can no longer access the app, send a deletion request to
-		<a href="mailto:bhu05@uw.edu?subject=Catch%20account%20deletion">bhu05@uw.edu</a> with the
+		<a href="mailto:catchapp.game@gmail.com?subject=Catch%20account%20deletion"
+			>catchapp.game@gmail.com</a
+		> with the
 		subject "Catch account deletion", sent from the email address associated with your Catch
 		account (so I can verify it's you). Requests are processed within 30 days.
 	</p>

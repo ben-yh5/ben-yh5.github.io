@@ -11,7 +11,7 @@
 		Catch is a travel photography app in which users share photos pinned to real-world places and
 		"catch" them by re-taking the photo at the same spot. It is developed and operated by Ben Hu
 		("I", "me"). This policy describes what data Catch collects, how it is used, and the choices
-		you have. Questions: <a href="mailto:bhu05@uw.edu">bhu05@uw.edu</a>.
+		you have. Questions: <a href="mailto:catchapp.game@gmail.com">catchapp.game@gmail.com</a>.
 	</p>
 
 	<h2>Data the app collects</h2>
@@ -61,10 +61,12 @@
 	<h3>Optional: ML training contributions (off by default)</h3>
 	<p>
 		Settings includes an optional data-contribution toggle, <strong>disabled by default</strong>.
-		If you turn it on, pairs of original and catch photos — together with their coordinates,
-		compass heading, and date — are stored separately and used to train the app's on-device visual
-		matching model. You can turn this off at any time, and contributed data is deleted when you
-		delete your account.
+		If you turn it on, when you catch a shot (or dismiss a suggested match), the photo pair —
+		together with the photos' coordinates, compass heading, and capture time — is stored
+		separately and used to train the app's on-device visual matching model. A pair includes both
+		sides: your photo and the original post's photo with its location, so an opted-in catcher
+		contributes the original as well as their own shot. You can turn this off at any time, and
+		data you contributed is deleted when you delete your account.
 	</p>
 
 	<h2>How data is used</h2>
@@ -108,7 +110,7 @@
 	</p>
 
 	<h2>Contact</h2>
-	<p>Ben Hu — <a href="mailto:bhu05@uw.edu">bhu05@uw.edu</a></p>
+	<p>Ben Hu — <a href="mailto:catchapp.game@gmail.com">catchapp.game@gmail.com</a></p>
 </div>
 
 <style>
