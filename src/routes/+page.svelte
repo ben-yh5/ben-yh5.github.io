@@ -10,7 +10,7 @@
 </svelte:head>
 
 <div class="page-header" id="about">
-    <h1>Page under construction</h1>
+    <h1>Page under construction.</h1>
 	<h1>Hello, I'm Ben</h1>
 	<p>Currently based in Seattle studying CS and Math at the University of Washington.</p>
 	<p>I'm doing research with the <a href="https://makeabilitylab.cs.washington.edu/" target="_blank" rel="noopener noreferrer">Makeability Lab</a>, creating remote sensing systems with computer vision to detect traffic lanes and audit OpenStreetMap.</p>
