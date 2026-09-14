@@ -4,7 +4,6 @@
 		<a href="/#about">About</a>
 		<a href="/#projects">Projects</a>
 		<a href="/#writing">Writing</a>
-		<a href="/#map">Map</a>
 	</div>
 </nav>
 

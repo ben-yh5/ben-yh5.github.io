@@ -1,5 +1,4 @@
 <script lang="ts">
-	import MiniMap from '$lib/components/MiniMap.svelte';
 	import ProjectCard from '$lib/components/ProjectCard.svelte';
 	import { formatDate } from '$lib/data/dates';
 
@@ -11,6 +10,7 @@
 </svelte:head>
 
 <div class="page-header" id="about">
+    <h1>Page under construction</h1>
 	<h1>Hello, I'm Ben</h1>
 	<p>Currently based in Seattle studying CS and Math at the University of Washington.</p>
 	<p>I'm doing research with the <a href="https://makeabilitylab.cs.washington.edu/" target="_blank" rel="noopener noreferrer">Makeability Lab</a>, creating remote sensing systems with computer vision to detect traffic lanes and audit OpenStreetMap.</p>
@@ -37,12 +37,6 @@
 			{/if}
 		</a>
 	{/each}
-</section>
-
-<section id="map">
-	<h2>Map</h2>
-	<MiniMap projects={data.projects} />
-	<p class="map-caption">Where each project was built.</p>
 </section>
 
 <style>
@@ -85,12 +79,5 @@
 		color: var(--secondary);
 		font-weight: 300;
 		margin-top: 2px;
-	}
-
-	.map-caption {
-		font-size: 13px;
-		color: var(--secondary);
-		font-weight: 300;
-		margin-top: 10px;
 	}
 </style>

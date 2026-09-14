@@ -13,7 +13,6 @@
 			<a href="/#about" class:active={activeSection === 'about'}>About</a>
 			<a href="/#projects" class:active={activeSection === 'projects'}>Projects</a>
 			<a href="/#writing" class:active={activeSection === 'writing'}>Writing</a>
-			<a href="/#map" class:active={activeSection === 'map'}>Map</a>
 			<a href="https://github.com/ben-yh5" target="_blank" rel="noopener noreferrer">GitHub<svg class="external-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" width="11" height="11" fill="currentColor"><path d="M3.75 2h3.5a.75.75 0 0 1 0 1.5H4.5v8h8V8.75a.75.75 0 0 1 1.5 0v3.5A1.75 1.75 0 0 1 12.25 14h-8.5A1.75 1.75 0 0 1 2 12.25v-8.5C2 2.784 2.784 2 3.75 2Zm6.5 0h2a.75.75 0 0 1 .75.75v2a.75.75 0 0 1-1.5 0V3.56L7.78 7.28a.75.75 0 0 1-1.06-1.06l3.72-3.72H9.25a.75.75 0 0 1 0-1.5Z"/></svg></a>
 		</nav>
 	</div>
