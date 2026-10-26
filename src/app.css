@@ -75,7 +75,7 @@ body {
 section { margin-bottom: 56px; }
 
 section h2 {
-	font-family: ui-monospace, SFMono-Regular, 'SF Mono', Menlo, Consolas, 'Liberation Mono', monospace;
+	font-family: inherit;
 	font-size: 12px;
 	font-weight: 400;
 	color: var(--secondary);
@@ -92,7 +92,7 @@ section h2 {
 
 /* ── COORDINATES ── */
 .coord {
-	font-family: ui-monospace, SFMono-Regular, 'SF Mono', Menlo, Consolas, 'Liberation Mono', monospace;
+	font-family: inherit;
 	font-size: 11px;
 	color: var(--secondary);
 	opacity: 0.3;

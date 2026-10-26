@@ -1,0 +1,28 @@
+---
+name: TeXdesk
+order: 7
+featured: true
+thumbnail: /images/texdesk/editor-screenshot.jpg
+coord: "[0.0000, 0.0000]"
+type: Independent
+summary: A lightweight LaTeX editor for macOS, for writing homework and notes as fast as Markdown.
+url: "#"
+github: https://github.com/ben-yh5/texdesk
+tags:
+  - Tauri
+  - Rust
+  - SolidJS
+  - CodeMirror
+---
+
+<script>
+	import Figure from '$lib/components/Figure.svelte';
+</script>
+
+<Figure src="/images/texdesk/editor-screenshot.jpg" alt="Screenshot of TeXdesk with a LaTeX file beside its PDF preview" caption="Lecture notes in TeXdesk, with the PDF building beside the source" />
+
+TeXdesk is a lightweight LaTeX editor for macOS, for writing homework and notes directly in `.tex` files as fast as Markdown. Intended to be a Overleaf-Obsidian hybrid, for students, researchers, and anyone who writes latex. Every edited file builds locally in-place, so the file tree remains clean. A smart PDF viewer allows for easy page navigation.
+
+TeXdesk has a typescript plugin engine for writing convenient shortcuts and functions that read editor context. Gille Castel's vim snippets are a built-in plugin. It also has customizable workspaces for folder overviews and templates defined in the app.
+
+TeXdesk supports tikz graphics, with a built-in AI-powered diagram editor that understands page context and can quickly generate figures.

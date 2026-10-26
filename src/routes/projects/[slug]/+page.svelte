@@ -68,7 +68,7 @@
 	}
 
 	.type-tag {
-		font-family: ui-monospace, SFMono-Regular, 'SF Mono', Menlo, Consolas, 'Liberation Mono', monospace;
+		font-family: inherit;
 		font-size: 11px;
 		color: var(--blue);
 		background: rgba(0, 122, 255, 0.07);
@@ -77,7 +77,7 @@
 	}
 
 	.tag {
-		font-family: ui-monospace, SFMono-Regular, 'SF Mono', Menlo, Consolas, 'Liberation Mono', monospace;
+		font-family: inherit;
 		font-size: 11px;
 		color: var(--purple);
 		background: rgba(124, 92, 191, 0.07);
@@ -123,7 +123,7 @@
 	}
 
 	.content :global(code) {
-		font-family: ui-monospace, SFMono-Regular, 'SF Mono', Menlo, Consolas, 'Liberation Mono', monospace;
+		font-family: inherit;
 		font-size: 14px;
 		background: rgba(0, 0, 0, 0.04);
 		padding: 2px 6px;

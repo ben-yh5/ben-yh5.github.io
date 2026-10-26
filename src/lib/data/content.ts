@@ -8,6 +8,8 @@ export interface Project {
 	summary: string;
 	tags: string[];
 	coord?: string;
+	featured?: boolean;
+	thumbnail?: string;
 }
 
 export interface Post {

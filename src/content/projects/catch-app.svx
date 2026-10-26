@@ -1,6 +1,8 @@
 ---
 name: Catch App
 order: 1
+featured: true
+thumbnail: /images/catch-app/map-screenshot.jpg
 coord: "[0.0000, 0.0000]"
 type: Independent
 summary: "#"

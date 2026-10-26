@@ -1,8 +1,12 @@
 <script lang="ts">
 	import ProjectCard from '$lib/components/ProjectCard.svelte';
+	import ProjectRow from '$lib/components/ProjectRow.svelte';
 	import { formatDate } from '$lib/data/dates';
 
 	let { data } = $props();
+
+	const selected = $derived(data.projects.filter((p) => p.featured));
+	const others = $derived(data.projects.filter((p) => !p.featured));
 </script>
 
 <svelte:head>
@@ -18,11 +22,20 @@
 </div>
 
 <section id="projects">
-	<h2>Projects</h2>
-	{#each data.projects as project}
+	<h2>Selected projects</h2>
+	{#each selected as project}
 		<ProjectCard {project} />
 	{/each}
 </section>
+
+{#if others.length}
+	<section>
+		<h2>Other projects</h2>
+		{#each others as project}
+			<ProjectRow {project} />
+		{/each}
+	</section>
+{/if}
 
 <section id="writing">
 	<h2>Writing</h2>

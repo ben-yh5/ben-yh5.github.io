@@ -73,7 +73,7 @@
 	}
 
 	.content :global(code) {
-		font-family: ui-monospace, SFMono-Regular, 'SF Mono', Menlo, Consolas, 'Liberation Mono', monospace;
+		font-family: inherit;
 		font-size: 14px;
 		background: rgba(0, 0, 0, 0.04);
 		padding: 2px 6px;

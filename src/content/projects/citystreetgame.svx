@@ -1,6 +1,8 @@
 ---
 name: citystreetgame
 order: 6
+featured: true
+thumbnail: /images/citystreetgame/streets-screenshot.jpg
 coord: "[0.0000, 0.0000]"
 type: Independent
 summary: "#"

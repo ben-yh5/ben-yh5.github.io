@@ -4,68 +4,73 @@
 	let { project }: { project: Project } = $props();
 </script>
 
-<a class="project" href="/projects/{project.slug}">
-	<div class="project-header">
-		<div class="project-name">{project.name} {#if project.coord}<span class="coord">{project.coord}</span>{/if}</div>
-		{#if project.url && project.url !== '#'}
-			<span class="project-url" onclick={(e) => e.stopPropagation()}><a href={project.url} target="_blank" rel="noopener noreferrer">Link<svg class="external-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" width="11" height="11" fill="currentColor"><path d="M3.75 2h3.5a.75.75 0 0 1 0 1.5H4.5v8h8V8.75a.75.75 0 0 1 1.5 0v3.5A1.75 1.75 0 0 1 12.25 14h-8.5A1.75 1.75 0 0 1 2 12.25v-8.5C2 2.784 2.784 2 3.75 2Zm6.5 0h2a.75.75 0 0 1 .75.75v2a.75.75 0 0 1-1.5 0V3.56L7.78 7.28a.75.75 0 0 1-1.06-1.06l3.72-3.72H9.25a.75.75 0 0 1 0-1.5Z"/></svg></a></span>
+<div class="project">
+	<a class="thumb" href="/projects/{project.slug}" tabindex="-1" aria-hidden="true">
+		{#if project.thumbnail}
+			<img src={project.thumbnail} alt="" loading="lazy" />
+		{:else if project.coord}
+			<span class="thumb-coord">{project.coord}</span>
 		{/if}
-	</div>
-	{#if project.summary && project.summary !== '#'}
-		<div class="project-desc">{project.summary}</div>
-	{/if}
-	<div class="project-tags">
-		{#if project.type}
-			<span class="type-tag">{project.type}</span>
+	</a>
+	<div class="body">
+		<a class="project-name" href="/projects/{project.slug}">{project.name}</a>
+		{#if project.summary && project.summary !== '#'}
+			<div class="project-desc">{project.summary}</div>
 		{/if}
-		{#each project.tags as tag}
-			<span class="tag">{tag}</span>
-		{/each}
+		<div class="project-meta">
+			{[project.type, ...project.tags].filter(Boolean).join(', ')}
+			{#if project.url && project.url !== '#'}<a href={project.url} target="_blank" rel="noopener noreferrer">[demo]</a>{/if}
+			{#if project.github}<a href={project.github} target="_blank" rel="noopener noreferrer">[code]</a>{/if}
+		</div>
 	</div>
-</a>
+</div>
 
 <style>
 	.project {
-		display: block;
-		text-decoration: none;
-		color: inherit;
+		display: flex;
+		gap: 20px;
 		padding: 16px 0;
 		border-bottom: 1px solid var(--rule);
-		cursor: pointer;
 	}
 
 	.project:first-of-type { border-top: 1px solid var(--rule); }
 
-	.project:hover .project-name {
-		color: var(--blue);
+	.thumb {
+		flex-shrink: 0;
+		width: 140px;
+		aspect-ratio: 4 / 3;
+		border: 1px solid var(--rule);
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		overflow: hidden;
+		text-decoration: none;
+		text-align: center;
+		padding: 0 8px;
 	}
 
-	.project-header {
-		display: flex;
-		align-items: baseline;
-		justify-content: space-between;
-		gap: 12px;
+	.thumb:has(img) { padding: 0; }
+
+	.thumb img {
+		width: 100%;
+		height: 100%;
+		object-fit: cover;
+	}
+
+	.thumb-coord {
+		font-size: 12px;
+		color: var(--secondary);
 	}
 
 	.project-name {
 		font-size: 17px;
 		font-weight: 400;
 		color: var(--text);
-		transition: color 0.2s;
-	}
-
-	.project-url {
-		font-size: 13px;
-		flex-shrink: 0;
-	}
-
-	.project-url a {
-		color: var(--secondary);
 		text-decoration: none;
 		transition: color 0.2s;
 	}
 
-	.project-url a:hover {
+	.project-name:hover {
 		color: var(--blue);
 	}
 
@@ -76,28 +81,18 @@
 		margin-top: 2px;
 	}
 
-	.project-tags {
+	.project-meta {
 		margin-top: 6px;
-		display: flex;
-		gap: 6px;
-		flex-wrap: wrap;
+		font-size: 13px;
+		color: var(--secondary);
 	}
 
-	.type-tag {
-		font-family: ui-monospace, SFMono-Regular, 'SF Mono', Menlo, Consolas, 'Liberation Mono', monospace;
-		font-size: 11px;
+	.project-meta a {
 		color: var(--blue);
-		background: rgba(0, 122, 255, 0.07);
-		padding: 2px 8px;
-		border-radius: 3px;
+		text-decoration: none;
 	}
 
-	.tag {
-		font-family: ui-monospace, SFMono-Regular, 'SF Mono', Menlo, Consolas, 'Liberation Mono', monospace;
-		font-size: 11px;
-		color: var(--purple);
-		background: rgba(124, 92, 191, 0.07);
-		padding: 2px 8px;
-		border-radius: 3px;
+	@media (max-width: 720px) {
+		.thumb { width: 96px; }
 	}
 </style>

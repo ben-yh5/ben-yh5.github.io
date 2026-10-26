@@ -18,7 +18,7 @@
 	</div>
 	<div class="sidebar-bottom">
 		<a href="mailto:bhu05@uw.edu">bhu05@uw.edu</a>
-		<div class="coord">[47.6538, -122.3078]</div>
+		<a class="coord" href="https://www.openstreetmap.org/?mlat=47.6538&mlon=-122.3078#map=17/47.6538/-122.3078" target="_blank" rel="noopener noreferrer">[47.6538, -122.3078]</a>
 	</div>
 </aside>
 
@@ -82,6 +82,8 @@
 	}
 
 	.sidebar-bottom .coord {
+		display: block;
+		color: inherit;
 		margin-top: 6px;
 	}
 

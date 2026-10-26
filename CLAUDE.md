@@ -16,7 +16,7 @@ Static personal portfolio site built with SvelteKit 2 + Svelte 5, using `adapter
 
 ### Content system
 
-Project content lives in `src/content/projects/*.svx` (mdsvex markdown files). Each `.svx` file has YAML frontmatter with fields defined by the `Project` interface in `src/lib/data/content.ts`: `name`, `slug`, `order`, `type`, `url`, `github`, `summary`, `tags`.
+Project content lives in `src/content/projects/*.svx` (mdsvex markdown files). Each `.svx` file has YAML frontmatter with fields defined by the `Project` interface in `src/lib/data/content.ts`: `name`, `slug`, `order`, `type`, `url`, `github`, `summary`, `tags`, plus optional `featured` (shown under Selected projects with a 4:3 `thumbnail`) and `coord`.
 
 The homepage (`src/routes/+page.ts`) eagerly imports all `.svx` files via `import.meta.glob`, extracts metadata, and sorts by `order`. Individual project pages (`src/routes/projects/[slug]/+page.ts`) lazy-load the matching `.svx` and render it as a Svelte component. The `entries()` export generates static paths for prerendering.
 
