@@ -1,14 +1,21 @@
 ---
 name: Seattle Access Map
 order: 2
+thumbnail: /images/accessmap/route-screenshot.jpg
 coord: "[47.6719, -122.3158]"
 type: Hackathon
-summary: "#"
+summary: "An accessibility map of Seattle's sidewalk barriers, with routing that avoids them."
 url: https://refact0r.github.io/seattleaccessmap/
 github: https://github.com/refact0r/seattleaccessmap
 tags:
   - NetworkX
   - OpenStreetMap
 ---
+
+<script>
+	import Figure from '$lib/components/Figure.svelte';
+</script>
+
+<Figure src="/images/accessmap/route-screenshot.jpg" alt="Screenshot of Seattle Access Map comparing an accessible route with the standard route across Lake Union" caption="An accessible route beside the standard one, over a map of sidewalk barriers" />
 
 description

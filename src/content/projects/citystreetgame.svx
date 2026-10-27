@@ -5,7 +5,7 @@ featured: true
 thumbnail: /images/citystreetgame/streets-screenshot.jpg
 coord: "[0.0000, 0.0000]"
 type: Independent
-summary: "#"
+summary: "A geography game for learning any city's streets by naming them, finding intersections, and writing routes."
 url: https://ben-yh5.github.io/citystreetgame/
 github: https://github.com/ben-yh5/citystreetgame
 tags:

@@ -1,12 +1,21 @@
 ---
 name: Tabletop
 order: 8
+thumbnail: /images/tabletop/cards-screenshot.jpg
 coord: "[0.0000, 0.0000]"
 type: Independent
-summary: "#"
+summary: "Figma for shopping - a canvas that lays your product tabs out as cards, ranked by what matters to you and priced at what you'd actually pay."
 url: "#"
-github: 
+github: https://github.com/refact0r/tabletop
 tags: []
 ---
 
+<script>
+	import Figure from '$lib/components/Figure.svelte';
+</script>
+
+<Figure src="/images/tabletop/cards-screenshot.jpg" alt="Screenshot of Tabletop with headphones laid out as cards and ranked by two criteria" caption="Headphones on the table as cards, ranked by what matters" />
+
 description
+
+<Figure src="/images/tabletop/value-map-screenshot.jpg" alt="Screenshot of Tabletop's value map plotting fit against total price" caption="The same products on the value map, fit against price" />

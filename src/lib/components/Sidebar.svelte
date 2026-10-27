@@ -1,9 +1,33 @@
 <script lang="ts">
-	interface Props {
-		activeSection?: string;
-	}
+	import { page } from '$app/state';
 
-	let { activeSection = 'projects' }: Props = $props();
+	const sections = ['about', 'projects', 'writing'];
+
+	let inView = $state('about');
+
+	// on other pages, highlight the section the page belongs to
+	const activeSection = $derived(
+		page.url.pathname === '/' ? inView : page.url.pathname.startsWith('/writing') ? 'writing' : 'projects'
+	);
+
+	// on the homepage, highlight the last section whose top has scrolled past 40% of the viewport
+	$effect(() => {
+		if (page.url.pathname !== '/') return;
+
+		const update = () => {
+			const atBottom = window.innerHeight + window.scrollY >= document.documentElement.scrollHeight - 2;
+			let current = sections[0];
+			for (const id of sections) {
+				const el = document.getElementById(id);
+				if (el && el.getBoundingClientRect().top <= window.innerHeight * 0.4) current = id;
+			}
+			inView = atBottom ? sections[sections.length - 1] : current;
+		};
+
+		update();
+		window.addEventListener('scroll', update, { passive: true });
+		return () => window.removeEventListener('scroll', update);
+	});
 </script>
 
 <aside class="sidebar">

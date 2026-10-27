@@ -10,7 +10,7 @@
 </svelte:head>
 
 <div class="project-page">
-	<a class="back" href="/#projects">&larr; Back</a>
+	<a class="back" href="/projects">&larr; Back</a>
 
 	<h1 class="title">{metadata.name}</h1>
 
@@ -24,9 +24,6 @@
 	</div>
 
 	<div class="tags">
-		{#if metadata.type}
-			<span class="type-tag">{metadata.type}</span>
-		{/if}
 		{#if metadata.tags}
 			{#each metadata.tags as tag}
 				<span class="tag">{tag}</span>
@@ -65,15 +62,6 @@
 		gap: 6px;
 		flex-wrap: wrap;
 		margin-bottom: 20px;
-	}
-
-	.type-tag {
-		font-family: inherit;
-		font-size: 11px;
-		color: var(--blue);
-		background: rgba(0, 122, 255, 0.07);
-		padding: 2px 8px;
-		border-radius: 3px;
 	}
 
 	.tag {

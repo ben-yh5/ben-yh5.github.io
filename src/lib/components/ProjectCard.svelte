@@ -18,7 +18,7 @@
 			<div class="project-desc">{project.summary}</div>
 		{/if}
 		<div class="project-meta">
-			{[project.type, ...project.tags].filter(Boolean).join(', ')}
+			{project.tags.join(', ')}
 			{#if project.url && project.url !== '#'}<a href={project.url} target="_blank" rel="noopener noreferrer">[demo]</a>{/if}
 			{#if project.github}<a href={project.github} target="_blank" rel="noopener noreferrer">[code]</a>{/if}
 		</div>

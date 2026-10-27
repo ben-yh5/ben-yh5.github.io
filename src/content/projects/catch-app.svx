@@ -5,7 +5,7 @@ featured: true
 thumbnail: /images/catch-app/map-screenshot.jpg
 coord: "[0.0000, 0.0000]"
 type: Independent
-summary: "#"
+summary: "A location-based social app where you recreate other people's photos by going to the spot they were taken."
 url: "#"
 github: https://github.com/ben-yh5/catch-app
 tags:

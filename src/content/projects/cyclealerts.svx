@@ -3,7 +3,7 @@ name: CycleAlerts
 order: 4
 coord: "[0.0000, 0.0000]"
 type: Independent
-summary: "#"
+summary: "A crowdsourced map for reporting and tracking cycling hazards around Seattle and Bellevue."
 url: https://cyclealerts.vercel.app/
 github: https://github.com/ben-yh5/cyclealerts
 tags:

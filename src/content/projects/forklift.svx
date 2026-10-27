@@ -1,9 +1,10 @@
 ---
 name: Forklift
 order: 3
+thumbnail: /images/forklift/home-screenshot.jpg
 coord: "[47.6554, -122.3051]"
 type: Hackathon
-summary: "#"
+summary: "An AI-powered guide to open source that finds repositories, explains codebases, and sorts issues by difficulty."
 url: https://fork-lift.vercel.app/
 github: https://github.com/refact0r/forklift
 tags:
@@ -12,5 +13,11 @@ tags:
   - Redis
   - GitHub API
 ---
+
+<script>
+	import Figure from '$lib/components/Figure.svelte';
+</script>
+
+<Figure src="/images/forklift/home-screenshot.jpg" alt="Screenshot of Forklift's home page with a repository search bar and popular repositories" caption="The home page, with repository search and popular projects" />
 
 description

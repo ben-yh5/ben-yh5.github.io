@@ -1,9 +1,10 @@
 ---
 name: Dubflow
 order: 5
+thumbnail: /images/dubflow/session-screenshot.jpg
 coord: "[47.6554, -122.3051]"
 type: Hackathon
-summary: "#"
+summary: "A desktop focus companion that watches for distractions through your webcam, with Dubs to keep you on task."
 url: 
 github: https://github.com/refact0r/dubflow
 tags:
@@ -12,5 +13,11 @@ tags:
   - AWS Rekognition
   - Socket
 ---
+
+<script>
+	import Figure from '$lib/components/Figure.svelte';
+</script>
+
+<Figure src="/images/dubflow/session-screenshot.jpg" alt="Screenshot of Dubflow during a focus session, with a timer, focus stats, and Dubs the pixel-art dog" caption="A focus session in progress, with Dubs keeping watch" />
 
 description
