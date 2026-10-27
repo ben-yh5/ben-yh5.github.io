@@ -10,13 +10,22 @@
 	const standalone = $derived(page.url.pathname.startsWith('/catch'));
 
 	onNavigate((navigation) => {
-		if (!document.startViewTransition) return;
+		if (!document.startViewTransition || matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+
+		// between home and the gallery, the selected list grows into the full one
+		const paths = [navigation.from?.url.pathname, navigation.to?.url.pathname];
+		const root = document.documentElement;
+		root.classList.toggle('gallery-transition', paths.includes('/') && paths.includes('/projects'));
+		// opening a project from its thumbnail: the screenshot expands first, then the page fades in
+		const to = navigation.to?.url.pathname;
+		root.classList.toggle('shot-transition', !!document.querySelector(`.project a[href="${to}"] img`));
 
 		return new Promise((resolve) => {
-			document.startViewTransition(async () => {
+			const transition = document.startViewTransition(async () => {
 				resolve();
 				await navigation.complete;
 			});
+			transition.finished.finally(() => root.classList.remove('gallery-transition', 'shot-transition'));
 		});
 	});
 </script>

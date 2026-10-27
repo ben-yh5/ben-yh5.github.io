@@ -72,7 +72,10 @@ body {
 .page-header p a:hover { border-color: var(--blue); }
 
 /* ── SECTION ── */
-section { margin-bottom: 56px; }
+section {
+	margin-bottom: 56px;
+	scroll-margin-top: 120px;
+}
 
 section h2 {
 	font-family: inherit;
@@ -103,6 +106,80 @@ section h2 {
 ::view-transition-old(root),
 ::view-transition-new(root) {
 	animation-duration: 150ms;
+}
+
+/* screenshots morph between a cropped thumbnail and a full figure */
+::view-transition-group(*.shot) {
+	animation-duration: 250ms;
+	animation-timing-function: cubic-bezier(0.2, 0, 0, 1);
+	border-radius: 6px;
+	overflow: hidden;
+}
+
+::view-transition-old(*.shot),
+::view-transition-new(*.shot) {
+	height: 100%;
+	object-fit: cover;
+}
+
+/* screenshots without a partner fade with the rest of the page */
+::view-transition-old(*.shot):only-child,
+::view-transition-new(*.shot):only-child {
+	animation-duration: 150ms;
+}
+
+/* when a project opens, the old page clears out, and the new one waits for the screenshot to land */
+.shot-transition::view-transition-old(root),
+.shot-transition::view-transition-old(*.shot):only-child {
+	animation-duration: 120ms;
+}
+
+.shot-transition::view-transition-new(root),
+.shot-transition::view-transition-new(*.shot):only-child {
+	animation: fade-in 150ms ease-out 100ms both;
+}
+
+@keyframes fade-in {
+	from { opacity: 0; }
+}
+
+/* "Selected projects" grows into the "Projects" title */
+.gallery-transition::view-transition-old(root),
+.gallery-transition::view-transition-new(root) {
+	animation-duration: 300ms;
+}
+
+/* thumbnails ride along inside their cards */
+.gallery-transition .project img {
+	view-transition-name: none !important;
+}
+
+.gallery-transition .projects-title {
+	view-transition-name: projects-title;
+	width: fit-content;
+}
+
+::view-transition-group(projects-title),
+::view-transition-group(*.card) {
+	animation-duration: 300ms;
+	animation-timing-function: cubic-bezier(0.2, 0, 0, 1);
+}
+
+/* cards only on the gallery unfold from under the selected ones */
+::view-transition-new(*.card):only-child {
+	animation: card-unfold 300ms cubic-bezier(0.2, 0, 0, 1) both;
+}
+
+::view-transition-old(*.card):only-child {
+	animation: card-unfold 200ms cubic-bezier(0.2, 0, 0, 1) reverse both;
+}
+
+@keyframes card-unfold {
+	from {
+		opacity: 0;
+		transform: translateY(-24px);
+		clip-path: inset(0 0 100% 0);
+	}
 }
 
 /* ── MOBILE ── */

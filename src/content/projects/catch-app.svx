@@ -2,7 +2,7 @@
 name: Catch App
 order: 1
 featured: true
-thumbnail: /images/catch-app/map-screenshot.jpg
+thumbnail: /images/catch-app/explore-screenshot.jpg
 coord: "[0.0000, 0.0000]"
 type: Independent
 summary: "A location-based social app where you recreate other people's photos by going to the spot they were taken."

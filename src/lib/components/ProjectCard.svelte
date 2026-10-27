@@ -1,13 +1,14 @@
 <script lang="ts">
 	import type { Project } from '$lib/data/content';
+	import { shotName } from '$lib/transitions';
 
 	let { project }: { project: Project } = $props();
 </script>
 
-<div class="project">
+<div class="project" style:--card="card-{project.slug}">
 	<a class="thumb" href="/projects/{project.slug}" tabindex="-1" aria-hidden="true">
 		{#if project.thumbnail}
-			<img src={project.thumbnail} alt="" loading="lazy" />
+			<img src={project.thumbnail} alt="" loading="lazy" style:view-transition-name={shotName(project.thumbnail)} />
 		{:else if project.coord}
 			<span class="thumb-coord">{project.coord}</span>
 		{/if}
@@ -35,6 +36,11 @@
 
 	.project:first-of-type { border-top: 1px solid var(--rule); }
 
+	:global(.gallery-transition) .project {
+		view-transition-name: var(--card);
+		view-transition-class: card;
+	}
+
 	.thumb {
 		flex-shrink: 0;
 		width: 140px;
@@ -55,6 +61,7 @@
 		width: 100%;
 		height: 100%;
 		object-fit: cover;
+		view-transition-class: shot;
 	}
 
 	.thumb-coord {

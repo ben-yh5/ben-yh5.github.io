@@ -20,7 +20,7 @@
 </div>
 
 <section id="projects">
-	<h2>Selected projects</h2>
+	<h2 class="projects-title">Selected projects</h2>
 	{#each selected as project}
 		<ProjectCard {project} />
 	{/each}

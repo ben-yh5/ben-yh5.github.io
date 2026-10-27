@@ -1,6 +1,7 @@
 ---
 name: Seattle Access Map
 order: 2
+featured: true
 thumbnail: /images/accessmap/route-screenshot.jpg
 coord: "[47.6719, -122.3158]"
 type: Hackathon

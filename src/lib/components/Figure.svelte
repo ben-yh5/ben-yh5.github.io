@@ -1,9 +1,11 @@
 <script lang="ts">
+	import { shotName } from '$lib/transitions';
+
 	let { src, alt, caption }: { src: string; alt: string; caption?: string } = $props();
 </script>
 
 <figure>
-	<img {src} {alt} loading="lazy" />
+	<img {src} {alt} loading="lazy" style:view-transition-name={shotName(src)} />
 	{#if caption}
 		<figcaption>{caption}</figcaption>
 	{/if}
@@ -21,6 +23,7 @@
 		max-height: 560px;
 		width: auto;
 		border-radius: 6px;
+		view-transition-class: shot;
 	}
 
 	figcaption {
