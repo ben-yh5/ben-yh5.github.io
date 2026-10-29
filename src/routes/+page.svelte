@@ -43,6 +43,10 @@
 </section>
 
 <style>
+	:global(.gallery-transition) #writing {
+		view-transition-name: writing;
+	}
+
 	.all-projects {
 		display: inline-block;
 		margin-top: 16px;

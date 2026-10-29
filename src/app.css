@@ -165,21 +165,23 @@ section h2 {
 	animation-timing-function: cubic-bezier(0.2, 0, 0, 1);
 }
 
-/* cards only on the gallery unfold from under the selected ones */
-::view-transition-new(*.card):only-child {
-	animation: card-unfold 300ms cubic-bezier(0.2, 0, 0, 1) both;
-}
-
+/* going to the gallery, Writing slides off the bottom while the other cards slide out from under the selected ones
+   (animated from the layout, see slideFromUnder); coming back runs it upward */
+::view-transition-new(*.card):only-child,
 ::view-transition-old(*.card):only-child {
-	animation: card-unfold 200ms cubic-bezier(0.2, 0, 0, 1) reverse both;
+	animation: none;
 }
 
-@keyframes card-unfold {
-	from {
-		opacity: 0;
-		transform: translateY(-24px);
-		clip-path: inset(0 0 100% 0);
-	}
+::view-transition-old(writing) {
+	animation: slide-off-down 250ms cubic-bezier(0.4, 0, 1, 1) both;
+}
+
+::view-transition-new(writing) {
+	animation: slide-off-down 250ms cubic-bezier(0.4, 0, 1, 1) reverse both;
+}
+
+@keyframes slide-off-down {
+	to { transform: translateY(100vh); }
 }
 
 /* ── MOBILE ── */

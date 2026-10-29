@@ -5,7 +5,7 @@
 	let { project }: { project: Project } = $props();
 </script>
 
-<div class="project" style:--card="card-{project.slug}">
+<div class="project" style:--card="card-{project.slug}" data-featured={project.featured || undefined}>
 	<a class="thumb" href="/projects/{project.slug}" tabindex="-1" aria-hidden="true">
 		{#if project.thumbnail}
 			<img src={project.thumbnail} alt="" loading="lazy" style:view-transition-name={shotName(project.thumbnail)} />
@@ -39,6 +39,8 @@
 	:global(.gallery-transition) .project {
 		view-transition-name: var(--card);
 		view-transition-class: card;
+		/* opaque, so cards stacked under each other mid-slide don't show through */
+		background: var(--bg);
 	}
 
 	.thumb {
